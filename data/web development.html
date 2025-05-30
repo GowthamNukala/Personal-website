@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Developer Portfolio</title>
+    <style>
+        /* CSS Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .portfolio-section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-top: 2rem;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .portfolio-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .portfolio-header p {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .achievements {
+            margin-bottom: 3rem;
+        }
+        
+        .achievements h2 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .achievements h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .achievements ul {
+            list-style-type: none;
+        }
+        
+        .achievements li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .achievements li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .achievements li:last-child {
+            border-bottom: none;
+        }
+        
+        .skills-section {
+            margin-bottom: 3rem;
+        }
+        
+        .skills-section h2 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .skills-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 svg {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-item {
+            background-color: white;
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .portfolio-header h1 {
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="portfolio-section">
+            <div class="portfolio-header">
+                <h1>🔥 The Code Architect – Building Digital Foundations That Scale 🔥</h1>
+                <p>I engineer high-performance backend systems that power tomorrow's web. With expertise in Node.js, Express, and REST API development.</p>
+            </div>
+            
+            <div class="achievements">
+                <h2>Key Achievements</h2>
+                <ul>
+                    <li>Automated cloud & network infrastructure, reducing manual configuration time by <strong>60%</strong> through intelligent API workflows</li>
+                    <li>Designed <strong>PostgreSQL schemas</strong> to manage complex infrastructure metadata with precision</li>
+                    <li>Built secure e-commerce platforms with payment gateways and user authentication</li>
+                    <li>Mastered <strong>SSH tunneling and NX-API</strong> to automate Cisco switch configurations</li>
+                    <li>Processed <strong>1M+ voice samples</strong> for ML-powered Parkinson's detection</li>
+                </ul>
+            </div>
+            
+            <div class="skills-section">
+                <h2>🛠️ Core Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/><path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>Backend</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">Express.js</span>
+                            <span class="skill-item">REST APIs</span>
+                            <span class="skill-item">Microservices</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10a2 2 0 1 1 0 4 .5.5 0 0 1 0-1 1 1 0 0 0 0-2H.5a.5.5 0 0 1-.5-.5z"/></svg>Databases</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">MySQL</span>
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">Oracle SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg>DevOps</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">GitHub Actions</span>
+                            <span class="skill-item">CI/CD Pipelines</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13z"/></svg>Networking</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">SSH</span>
+                            <span class="skill-item">Jump Hosts</span>
+                            <span class="skill-item">Cisco NX-OS</span>
+                            <span class="skill-item">VLANs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z"/></svg>ML/AI</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Supervised Learning</span>
+                            <span class="skill-item">Neural Networks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <a href="#contact" class="cta-button">🚀 Let's architect something extraordinary!</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

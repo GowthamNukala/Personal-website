@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Developer Portfolio</title>
+    <style>
+        /* Modern Software Dev Theme */
+        :root {
+            --primary: #3b82f6;
+            --secondary: #1d4ed8;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+            --code-bg: #0f172a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .dev-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dev-hero::before {
+            content: "</>";
+            position: absolute;
+            font-size: 20rem;
+            font-weight: bold;
+            opacity: 0.05;
+            right: -5rem;
+            top: -5rem;
+            font-family: monospace;
+        }
+        
+        .dev-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .dev-hero p {
+            font-size: 1.1rem;
+            max-width: 80%;
+            opacity: 0.9;
+        }
+        
+        .dev-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .highlight-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid var(--accent);
+        }
+        
+        .highlight-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight-card h3 .icon {
+            background: var(--accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .highlight-card p {
+            color: #64748b;
+        }
+        
+        .highlight-card .metric {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+        
+        .code-skills {
+            background: var(--code-bg);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .code-skills h2 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .skill-tag.primary {
+            background: var(--accent);
+            color: var(--dark);
+            font-weight: bold;
+        }
+        
+        .dev-workflow {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .workflow-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .workflow-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .workflow-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .workflow-content h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .workflow-content p {
+            color: #64748b;
+        }
+        
+        @media (max-width: 768px) {
+            .dev-hero {
+                padding: 2rem 1.5rem;
+            }
+            
+            .dev-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .dev-hero p {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="dev-hero">
+            <h1>Software Development Expertise</h1>
+            <p>Building robust systems through clean code, efficient algorithms, and scalable architecture. Specializing in backend development, automation, and bridging hardware-software solutions.</p>
+        </section>
+        
+        <!-- Highlights Section -->
+        <div class="dev-highlights">
+            <div class="highlight-card">
+                <h3><span class="icon">⚡</span>Infrastructure Automation</h3>
+                <div class="metric">60% Faster</div>
+                <p>Reduced manual configuration time by automating cloud and network infrastructure using Node.js and Cisco NX-OS APIs.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <h3><span class="icon">🧠</span>Machine Learning</h3>
+                <div class="metric">1M+ Samples</div>
+                <p>Developed ML models for Parkinson's detection with 20% higher precision using supervised learning techniques.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <h3><span class="icon">🛒</span>E-Commerce Systems</h3>
+                <div class="metric">Full-Stack</div>
+                <p>Built secure platforms with authentication, cart systems, and payment gateway integrations.</p>
+            </div>
+        </div>
+        
+        <!-- Skills Section -->
+        <section class="code-skills">
+            <h2>&lt;tech_stack&gt;</h2>
+            <div class="skill-tags">
+                <span class="skill-tag primary">Node.js</span>
+                <span class="skill-tag primary">Express</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag primary">PostgreSQL</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Oracle SQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">SSH</span>
+                <span class="skill-tag">NX-API</span>
+                <span class="skill-tag">OOP</span>
+                <span class="skill-tag">SDLC</span>
+            </div>
+        </section>
+        
+        <!-- Workflow Section -->
+        <section class="dev-workflow">
+            <h2 style="color: var(--secondary); margin-bottom: 1.5rem;">Development Approach</h2>
+            
+            <div class="workflow-item">
+                <div class="workflow-icon">1</div>
+                <div class="workflow-content">
+                    <h3>Problem-First Mindset</h3>
+                    <p>Begin by deeply understanding the core challenge before writing a single line of code.</p>
+                </div>
+            </div>
+            
+            <div class="workflow-item">
+                <div class="workflow-icon">2</div>
+                <div class="workflow-content">
+                    <h3>Architecture Design</h3>
+                    <p>Create scalable system blueprints with clear module separation and interface contracts.</p>
+                </div>
+            </div>
+            
+            <div class="workflow-item">
+                <div class="workflow-icon">3</div>
+                <div class="workflow-content">
+                    <h3>Efficient Implementation</h3>
+                    <p>Leverage appropriate design patterns and optimize algorithms for performance.</p>
+                </div>
+            </div>
+            
+            <div class="workflow-item">
+                <div class="workflow-icon">4</div>
+                <div class="workflow-content">
+                    <h3>Automation Focus</h3>
+                    <p>Identify and eliminate manual processes through scripting and tooling.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

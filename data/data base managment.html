@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Management Expertise</title>
+    <style>
+        /* Database-Centric Theme */
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --postgres: #336791;
+            --mysql: #4479a1;
+            --oracle: #f80000;
+            --mongodb: #589636;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .db-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .db-hero::before {
+            content: "{}";
+            position: absolute;
+            font-size: 20rem;
+            font-weight: bold;
+            opacity: 0.05;
+            right: -5rem;
+            top: -5rem;
+        }
+        
+        .db-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .db-hero p {
+            font-size: 1.1rem;
+            max-width: 80%;
+            opacity: 0.9;
+        }
+        
+        .db-achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid var(--accent);
+        }
+        
+        .achievement-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .achievement-card h3 .icon {
+            background: var(--accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .db-systems {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .db-system {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        
+        .db-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .postgres { background-color: var(--postgres); }
+        .mysql { background-color: var(--mysql); }
+        .oracle { background-color: var(--oracle); }
+        .mongodb { background-color: var(--mongodb); }
+        
+        .db-details h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .db-details p {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .db-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .feature-tag {
+            background: #f1f5f9;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--dark);
+        }
+        
+        .schema-showcase {
+            background: var(--dark);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .schema-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .schema-header h2 {
+            color: var(--accent);
+        }
+        
+        .schema-code {
+            background: #0f172a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .keyword { color: #f472b6; }
+        .function { color: #60a5fa; }
+        .string { color: #34d399; }
+        .comment { color: #94a3b8; }
+        .table { color: #fbbf24; }
+        
+        @media (max-width: 768px) {
+            .db-hero {
+                padding: 2rem 1.5rem;
+            }
+            
+            .db-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .db-hero p {
+                max-width: 100%;
+            }
+            
+            .db-system {
+                flex-direction: column;
+            }
+            
+            .db-logo {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="db-hero">
+            <h1>Database Management Expertise</h1>
+            <p>Designing efficient, scalable database architectures that power robust applications. Specializing in relational and NoSQL systems with optimized queries and secure data workflows.</p>
+        </section>
+        
+        <!-- Achievements Section -->
+        <div class="db-achievements">
+            <div class="achievement-card">
+                <h3><span class="icon">⚡</span>Infrastructure Metadata</h3>
+                <p>Designed PostgreSQL schemas to manage complex cloud and network infrastructure metadata with precision.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <h3><span class="icon">🔗</span>Seamless Integrations</h3>
+                <p>Connected databases to Node.js backends for automated provisioning systems with real-time data sync.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <h3><span class="icon">📊</span>Large-Scale Analysis</h3>
+                <p>Processed and analyzed 1M+ voice samples for ML research with efficient database operations.</p>
+            </div>
+        </div>
+        
+        <!-- Database Systems Section -->
+        <section class="db-systems">
+            <h2 style="color: var(--secondary); margin-bottom: 1.5rem;">Database Systems Mastery</h2>
+            
+            <div class="db-system">
+                <div class="db-logo postgres">PG</div>
+                <div class="db-details">
+                    <h3>PostgreSQL</h3>
+                    <p>Designed schemas for infrastructure automation project, optimizing for complex queries and reporting.</p>
+                    <div class="db-features">
+                        <span class="feature-tag">Schema Design</span>
+                        <span class="feature-tag">Complex Queries</span>
+                        <span class="feature-tag">Performance Tuning</span>
+                        <span class="feature-tag">JSONB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="db-system">
+                <div class="db-logo mysql">mySQL</div>
+                <div class="db-details">
+                    <h3>MySQL</h3>
+                    <p>Implemented for e-commerce platforms with transaction support and user data management.</p>
+                    <div class="db-features">
+                        <span class="feature-tag">ACID Compliance</span>
+                        <span class="feature-tag">Index Optimization</span>
+                        <span class="feature-tag">Stored Procedures</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="db-system">
+                <div class="db-logo oracle">ORA</div>
+                <div class="db-details">
+                    <h3>Oracle SQL</h3>
+                    <p>Managed enterprise-grade databases with advanced security and partitioning features.</p>
+                    <div class="db-features">
+                        <span class="feature-tag">PL/SQL</span>
+                        <span class="feature-tag">Partitioning</span>
+                        <span class="feature-tag">RAC</span>
+                        <span class="feature-tag">Security</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="db-system">
+                <div class="db-logo mongodb">MDB</div>
+                <div class="db-details">
+                    <h3>MongoDB</h3>
+                    <p>Utilized for flexible data storage in applications requiring schema flexibility.</p>
+                    <div class="db-features">
+                        <span class="feature-tag">Document Model</span>
+                        <span class="feature-tag">Aggregation</span>
+                        <span class="feature-tag">Sharding</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Schema Showcase Section -->
+        <section class="schema-showcase">
+            <div class="schema-header">
+                <h2>Schema Design Example</h2>
+                <div style="color: var(--accent); font-family: monospace;">PostgreSQL</div>
+            </div>
+            
+            <div class="schema-code">
+                <span class="keyword">CREATE TABLE</span> <span class="table">infrastructure_devices</span> (<br>
+                &nbsp;&nbsp;<span class="table">device_id</span> <span class="keyword">SERIAL PRIMARY KEY</span>,<br>
+                &nbsp;&nbsp;<span class="table">hostname</span> <span class="keyword">VARCHAR</span>(50) <span class="keyword">NOT NULL UNIQUE</span>,<br>
+                &nbsp;&nbsp;<span class="table">ip_address</span> <span class="keyword">INET NOT NULL</span>,<br>
+                &nbsp;&nbsp;<span class="table">device_type</span> <span class="keyword">VARCHAR</span>(20) <span class="keyword">CHECK</span> (device_type <span class="keyword">IN</span> (<span class="string">'switch'</span>, <span class="string">'router'</span>, <span class="string">'server'</span>)),<br>
+                &nbsp;&nbsp;<span class="table">config_status</span> <span class="keyword">JSONB</span>,<br>
+                &nbsp;&nbsp;<span class="table">last_updated</span> <span class="keyword">TIMESTAMPTZ DEFAULT</span> <span class="function">NOW</span>()<br>
+                );<br><br>
+                
+                <span class="comment">-- Index for frequent lookup columns</span><br>
+                <span class="keyword">CREATE INDEX</span> <span class="keyword">ON</span> <span class="table">infrastructure_devices</span> (<span class="table">device_type</span>, <span class="table">last_updated</span>);<br><br>
+                
+                <span class="comment">-- Automated VLAN tracking</span><br>
+                <span class="keyword">CREATE TABLE</span> <span class="table">vlans</span> (<br>
+                &nbsp;&nbsp;<span class="table">vlan_id</span> <span class="keyword">INTEGER PRIMARY KEY</span>,<br>
+                &nbsp;&nbsp;<span class="table">device_id</span> <span class="keyword">INTEGER REFERENCES</span> <span class="table">infrastructure_devices</span>,<br>
+                &nbsp;&nbsp;<span class="table">name</span> <span class="keyword">VARCHAR</span>(30),<br>
+                &nbsp;&nbsp;<span class="table">created_at</span> <span class="keyword">TIMESTAMPTZ DEFAULT</span> <span class="function">NOW</span>()<br>
+                );
+            </div>
+        </section>
+    </div>
+</body>
+</html>
