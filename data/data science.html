@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science & ML Expertise</title>
+    <style>
+        /* Data Science Theme */
+        :root {
+            --primary: #8B5CF6;
+            --secondary: #7C3AED;
+            --accent: #10B981;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --python: #3776AB;
+            --tensorflow: #FF6F00;
+            --tableau: #E97687;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #F3F4F6;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .ds-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ds-hero::before {
+            content: "{}";
+            position: absolute;
+            font-size: 20rem;
+            font-weight: bold;
+            opacity: 0.05;
+            right: -5rem;
+            top: -5rem;
+        }
+        
+        .ds-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .ds-hero p {
+            font-size: 1.1rem;
+            max-width: 80%;
+            opacity: 0.9;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid var(--accent);
+        }
+        
+        .skill-card h2 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-card h2 svg {
+            margin-right: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-item {
+            background: #EFF6FF;
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .skill-item.python {
+            background: #E1EFFE;
+            color: var(--python);
+            border-left: 3px solid var(--python);
+        }
+        
+        .skill-item.ml {
+            background: #ECFDF5;
+            color: var(--accent);
+            border-left: 3px solid var(--accent);
+        }
+        
+        .skill-item.viz {
+            background: #FCE7F3;
+            color: #DB2777;
+            border-left: 3px solid #DB2777;
+        }
+        
+        .skill-item.tools {
+            background: #EDE9FE;
+            color: var(--primary);
+            border-left: 3px solid var(--primary);
+        }
+        
+        .project-showcase {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-showcase h2 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-card {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .project-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .project-icon {
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        
+        .project-details h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-details p {
+            color: #6B7280;
+            margin-bottom: 0.8rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: #F3F4F6;
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .ds-hero {
+                padding: 2rem 1.5rem;
+            }
+            
+            .ds-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .ds-hero p {
+                max-width: 100%;
+            }
+            
+            .project-card {
+                flex-direction: column;
+            }
+            
+            .project-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="ds-hero">
+            <h1>Data Science & Machine Learning</h1>
+            <p>Transforming raw data into actionable insights through statistical analysis, machine learning models, and compelling visualizations.</p>
+        </section>
+        
+        <!-- Skills Section -->
+        <div class="skills-container">
+            <div class="skill-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                        <path d="M5.5.5a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-1z"/>
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                    </svg>
+                    Languages & Libraries
+                </h2>
+                <div class="skill-items">
+                    <span class="skill-item python">Python</span>
+                    <span class="skill-item python">NumPy</span>
+                    <span class="skill-item python">pandas</span>
+                    <span class="skill-item python">matplotlib</span>
+                    <span class="skill-item python">Seaborn</span>
+                    <span class="skill-item python">scikit-learn</span>
+                    <span class="skill-item python">TensorFlow</span>
+                    <span class="skill-item python">Keras</span>
+                </div>
+            </div>
+            
+            <div class="skill-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/>
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                    </svg>
+                    Statistics & Math
+                </h2>
+                <div class="skill-items">
+                    <span class="skill-item ml">Linear Regression</span>
+                    <span class="skill-item ml">Logistic Regression</span>
+                    <span class="skill-item ml">Probability</span>
+                    <span class="skill-item ml">Hypothesis Testing</span>
+                    <span class="skill-item ml">Clustering</span>
+                </div>
+            </div>
+            
+            <div class="skill-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 0h1v16H0V0zm1 15h15v1H1v-1z"/>
+                        <path d="M14 3V1h-2v2h-1v3h2V5h1v4h-1V8h-2v2h2v1h1v3h-1v-1h-2v2h2v1h3v-1h-1v-2h3v-1h-3v-4h1v1h2V8h-2V7h1V5h-1v1h-2V3h1zM4.5 7H3v5h1.5a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5zm0-3H3v2h1.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+                    </svg>
+                    Data Visualization
+                </h2>
+                <div class="skill-items">
+                    <span class="skill-item viz">Tableau</span>
+                    <span class="skill-item viz">matplotlib</span>
+                    <span class="skill-item viz">Seaborn</span>
+                </div>
+            </div>
+            
+            <div class="skill-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/>
+                        <path d="M8.5 5a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V9a.5.5 0 0 0 1 0V7.5H10a.5.5 0 0 0 0-1H8.5V5z"/>
+                    </svg>
+                    Tools & Other
+                </h2>
+                <div class="skill-items">
+                    <span class="skill-item tools">Jupyter Notebook</span>
+                    <span class="skill-item tools">Anaconda</span>
+                    <span class="skill-item tools">Git</span>
+                    <span class="skill-item tools">Excel</span>
+                    <span class="skill-item ml">Machine Learning</span>
+                    <span class="skill-item ml">Deep Learning</span>
+                    <span class="skill-item ml">Data Wrangling</span>
+                    <span class="skill-item ml">Feature Engineering</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Project Showcase Section -->
+        <section class="project-showcase">
+            <h2>Featured Data Science Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-icon">🧠</div>
+                <div class="project-details">
+                    <h3>Voice-Based Parkinson's Detection</h3>
+                    <p>Developed ML models achieving 20% higher precision in detecting Parkinson's disease from voice samples. Analyzed over 1M+ records and published findings in IRIET.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">pandas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-icon">📈</div>
+                <div class="project-details">
+                    <h3>Moisture Controller System</h3>
+                    <p>Presented real-time model at V.R. Siddhartha Engineering College combining sensor data analysis with control systems.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">matplotlib</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
